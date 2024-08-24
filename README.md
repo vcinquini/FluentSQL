@@ -1,12 +1,7 @@
-<p align="center">
-  <img src="https://github.com/guidospadavecchia/FluentSQL/blob/main/design/fsql-logo.png">
-</p>
 
-## ⚠️ This project is not being actively mantained
-It is not recommended to use this library in production environments.
 
 ## Description
-**FluentSQL** is a **.NET Standard** library wrapping [Dapper](https://github.com/StackExchange/Dapper) micro-ORM, and adding a fluent syntax for query building, similar to [Dapper.SqlBuilder](https://www.nuget.org/packages/Dapper.SqlBuilder/) (but different), all in one small package.  
+**FluentSQL** is a **.NET Core 8** library wrapping [Dapper](https://github.com/StackExchange/Dapper) micro-ORM, and adding a fluent syntax for query building, similar to [Dapper.SqlBuilder](https://www.nuget.org/packages/Dapper.SqlBuilder/) (but different), all in one small package.  
 The **FSQL** syntax is as similar as SQL syntax as you can get, while using a Fluent API which resembles LINQ.
 
 ## Packages
@@ -404,13 +399,13 @@ All available end methods can be executed as a single result (if you are sure yo
 
 ## Contributions
 
-Contributions are welcome! Submit a [pull request](https://github.com/guidospadavecchia/FluentSQL/pulls).
+Contributions are welcome! Submit a [pull request](https://github.com/vcinquini/FluentSQL/pulls).
 
 ### Mantainers
 There are no active mantainers at the moment due to lack of time.
 
 ## License
-This proyect is distributed under the [MIT License](https://github.com/guidospadavecchia/FluentSQL/blob/main/LICENSE).
+This proyect is distributed under the [MIT License](https://github.com/vcinquini/FluentSQL/blob/main/LICENSE).
 
 ***
 <p align="center">
