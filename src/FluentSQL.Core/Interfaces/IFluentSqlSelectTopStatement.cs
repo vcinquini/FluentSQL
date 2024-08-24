@@ -1,4 +1,6 @@
-﻿namespace FluentSQL.Core;
+﻿using System.Collections.Generic;
+
+namespace FluentSQL.Core;
 
 /// <summary>
 /// Represents a SELECT statement with the TOP clause applied.
@@ -25,4 +27,9 @@ public interface IFluentSqlSelectTopStatement : IFluentSqlQueryEnd
 	/// <param name="table">Name of the table.</param>
 	/// <param name="tableAlias">Alias of the table.</param>
 	IFluentSqlSelectFromStatement From(string table, string tableAlias);
+	/// <summary>
+	/// Applies the FROM operator indicating the tables to query.
+	/// </summary>
+	/// <param name="tables">Array of Tables Names.</param>
+	IFluentSqlSelectFromStatement From(params string[] tables);
 }

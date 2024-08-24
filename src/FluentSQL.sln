@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentSQL.Core", "FluentSQL.Core\FluentSQL.Core.csproj", "{5D3E5C01-0CCA-471A-9E6A-9D00E31CEF0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentSQL.Core", "FluentSQL.Core\FluentSQL.Core.csproj", "{5D3E5C01-0CCA-471A-9E6A-9D00E31CEF0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\tests\UnitTests\UnitTests.csproj", "{844FC2EC-FC8E-407A-AEE6-A42A3FE0C34E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5D3E5C01-0CCA-471A-9E6A-9D00E31CEF0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D3E5C01-0CCA-471A-9E6A-9D00E31CEF0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D3E5C01-0CCA-471A-9E6A-9D00E31CEF0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{844FC2EC-FC8E-407A-AEE6-A42A3FE0C34E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{844FC2EC-FC8E-407A-AEE6-A42A3FE0C34E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{844FC2EC-FC8E-407A-AEE6-A42A3FE0C34E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{844FC2EC-FC8E-407A-AEE6-A42A3FE0C34E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

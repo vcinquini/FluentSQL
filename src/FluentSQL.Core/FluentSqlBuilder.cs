@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static Dapper.SqlMapper;
 
 namespace FluentSQL.Core;
 
@@ -302,6 +303,13 @@ public sealed class FluentSqlBuilder :	IFluentSql, IFluentSqlSelectStatement, IF
 	}
 
 	/// <inheritdoc />
+	public IFluentSqlSelectFromStatement From(params string[] tables)
+	{
+		_query = $"{_query} FROM {string.Join(", ", tables)}";
+		return this;
+	}
+
+	/// <inheritdoc />
 	public IFluentSqlSelectFromStatement From(string table, string tableAlias)
 	{
 		_query = $"{_query} FROM {table} {tableAlias}";
@@ -318,14 +326,7 @@ public sealed class FluentSqlBuilder :	IFluentSql, IFluentSqlSelectStatement, IF
 	/// <inheritdoc />
 	public IFluentSqlSelectJoinStatement Join(string table, JoinTypes joinType)
 	{
-		string joinTypeName = joinType switch
-		{
-			JoinTypes.Inner => "INNER",
-			JoinTypes.Left => "LEFT",
-			JoinTypes.Right => "RIGHT",
-			JoinTypes.FullOuter => "FULL OUTER",
-			_ => "INNER",
-		};
+		string joinTypeName = GetJoinType(joinType);
 		_query = $"{_query} {joinTypeName} JOIN {table}";
 		return this;
 	}
@@ -333,14 +334,7 @@ public sealed class FluentSqlBuilder :	IFluentSql, IFluentSqlSelectStatement, IF
 	/// <inheritdoc />
 	public IFluentSqlSelectJoinStatement Join(string table, string tableAlias, JoinTypes joinType)
 	{
-		string joinTypeName = joinType switch
-		{
-			JoinTypes.Inner => "INNER",
-			JoinTypes.Left => "LEFT",
-			JoinTypes.Right => "RIGHT",
-			JoinTypes.FullOuter => "FULL OUTER",
-			_ => "INNER",
-		};
+		string joinTypeName = GetJoinType(joinType);
 		_query = $"{_query} {joinTypeName} JOIN {table} {tableAlias}";
 		return this;
 	}
@@ -853,6 +847,18 @@ public sealed class FluentSqlBuilder :	IFluentSql, IFluentSqlSelectStatement, IF
 	private void AddQueryParameters(object parameters)
 	{
 		_queryParameters.AddDynamicParams(parameters);
+	}
+
+	private string GetJoinType(JoinTypes joinType)
+	{
+		return joinType switch
+		{
+			JoinTypes.Inner => "INNER",
+			JoinTypes.Left => "LEFT",
+			JoinTypes.Right => "RIGHT",
+			JoinTypes.FullOuter => "FULL OUTER",
+			_ => "INNER",
+		};
 	}
 
 	#endregion

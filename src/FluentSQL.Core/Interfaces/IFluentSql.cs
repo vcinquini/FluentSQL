@@ -17,6 +17,10 @@ public interface IFluentSql : IDisposable
 	/// Indicates whether a transaction is currently active.
 	/// </summary>
 	bool InTransaction { get; }
+	/// <summary>
+	/// Gets the raw query.
+	/// </summary>
+	public string Query { get; } 
 
 	/// <summary>
 	/// Sets the maximum time to wait for a query to run before throwing an error.
