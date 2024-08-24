@@ -10,8 +10,6 @@
     <RootNamespace>FluentSQL.Core</RootNamespace>
     <Version>2.0.5</Version>
     <PackageIcon>fsql-logo.png</PackageIcon>
-    <Authors>Guido Spadavecchia</Authors>
-    <Company>Guido Spadavecchia</Company>
   </PropertyGroup>
 
   <ItemGroup>
